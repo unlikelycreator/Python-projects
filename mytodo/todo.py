@@ -1,0 +1,20 @@
+from tkinter import*
+root=Tk()
+root.title("TODO LIST")
+
+a=Label(root,text="TODO LIST",font=("arial", 40 , "bold"))
+a.grid(row=0,column=1)
+a1=Label(root,text="Add item")
+a1.grid(row=1)
+name=StringVar()
+e1=Entry(root, textvariable=name)
+e1.grid(row=1,column=2)
+def submit():
+	f1=open("C:\\Hritik\\apps\\mytodo\\todo.text","a+")
+	f1.write(str(name.get()+ "\n"))
+	str1=f1.read()
+	print(str1)
+	f1.close()
+b=Button(root,text="submit",command=submit)
+b.grid(row=3,column=3)
+root.mainloop()
